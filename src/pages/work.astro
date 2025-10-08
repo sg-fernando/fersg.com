@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import WorkItem from "../components/WorkItem.astro";
-const pageTitle = "My Astro Learning Blog";
+const pageTitle = "Fernando Sandoval Garza - Work";
 const allWork = Object.values(await import.meta.glob('./work/*.md', { eager: true }));
 ---
 
@@ -15,7 +15,7 @@ const allWork = Object.values(await import.meta.glob('./work/*.md', { eager: tru
                                         company={job.frontmatter.company} 
                                         startDate={job.frontmatter.startDate} 
                                         endDate={job.frontmatter.endDate}
-                                        tagline={job.frontmatter.tagline}
+                                        description={job.frontmatter.description}
                                         bulletOne={job.frontmatter.bulletOne} 
                                         bulletTwo={job.frontmatter.bulletTwo} 
                                         bulletThree={job.frontmatter.bulletThree} 

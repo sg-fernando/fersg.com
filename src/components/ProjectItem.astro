@@ -1,47 +1,58 @@
 ---
-const { url, title, company, startDate, endDate, tagline, bulletOne, bulletTwo, bulletThree, bulletFour } = Astro.props;
+const { url, externalUrl, title, pubDate, lastUpdated, description } = Astro.props;
+// if externalUrl is provided, use that instead of url
+var usingUrl = url;
+if (externalUrl && externalUrl.length > 0) {
+    usingUrl = externalUrl;
+}
 ---
-<div class="job">
-    <a href={url} class="job-title">{title}</a>
-    <div class="job-title">{title}</div>
-    <div class="job-company">at {company}</div>
-    <div class="job-dates">{startDate} - {endDate}</div>
-    <div class="job-tagline"><em>{tagline}</em></div>
-    <ul class="job-description">
-        {bulletOne && <li>{bulletOne}</li>}
-        {bulletTwo && <li>{bulletTwo}</li>}
-        {bulletThree && <li>{bulletThree}</li>}
-        {bulletFour && <li>{bulletFour}</li>}
-    </ul>
+<a class="project" href={usingUrl}>
+    <div class="project-header">
+        <div class="project-title">{title}</div>
+        <div class="project-dates">{pubDate}</div>
+    </div>
+    <div class="project-description">{description}</div>
+</a>
 
 <style>
-    .job {
+    .project {
+        /* padding: 1rem; */
+        text-decoration: none;
+        margin: 0;
+        padding: .5rem 0 .5rem 0;
+        color: inherit;
         display: flex;
         flex-direction: column;
-        gap: .3rem;
+        gap: 0;
+        transition: background-color 0.3s, color 0.3s, padding 0.3s;
+        border-radius: 10px;
     }
-    
-    .job-title {
+
+    .project:hover,
+    .project:focus {
+        background-color: #7f857d;
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ffffff63;
+    }
+
+    .project-title {
         font-size: 1rem;
         font-weight: 600;
     }
-    
-    .job-company {
+
+    .project-dates {
         font-size: 0.9rem;
         font-weight: 100;
     }
-    
-    .job-dates {
-        font-size: 0.9rem;
-        font-weight: 100;
-    }
-    
-    .job-tagline {
-        margin-top: .5rem;
-        font-size: 1rem;
-    }
-    
-    .job-description {
+
+    .project-description {
         /* margin: 0; */
         margin-top: 0;
         font-size: 1rem;

@@ -4,18 +4,25 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p><em>{frontmatter.description}</em></p>
-  <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
-
-  <p>Written by: {frontmatter.author}</p>
-
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-
-  <slot />
+    <div class="project-content">
+        <div class="project-date">Published: {frontmatter.pubDate}
+        {frontmatter.lastUpdated ? ` | Updated: ${frontmatter.lastUpdated}` : ''}
+        </div>
+        <slot />
+    </div>
 </BaseLayout>
 <style>
-  a {
-    color: #00539f;
+  .project-date {
+    font-size: 0.8rem;
+    font-weight: 100;
+    margin: 0;
   }
 
+  .project-content {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    margin: 0;
+    padding: 0;
+  }
 </style>

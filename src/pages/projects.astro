@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectItem from "../components/ProjectItem.astro";
-const pageTitle = "My Astro Learning Blog";
+const pageTitle = "Fernando Sandoval Garza - Projects";
 const allProjects = Object.values(await import.meta.glob('./projects/*.md', { eager: true }));
 ---
 
@@ -9,18 +9,14 @@ const allProjects = Object.values(await import.meta.glob('./projects/*.md', { ea
     <div class="title">
             Projects
     </div>
-    <div id="work" class="content">
+    <div id="projects" class="content">
         {allProjects.map((project:any) => <ProjectItem
                                         url={project.url}
-                                        title={project.frontmatter.title} 
-                                        company={project.frontmatter.company} 
-                                        startDate={project.frontmatter.startDate} 
-                                        endDate={project.frontmatter.endDate}
-                                        tagline={project.frontmatter.tagline}
-                                        bulletOne={project.frontmatter.bulletOne} 
-                                        bulletTwo={project.frontmatter.bulletTwo} 
-                                        bulletThree={project.frontmatter.bulletThree} 
-                                        bulletFour={project.frontmatter.bulletFour}
+                                        externalUrl={project.frontmatter.externalUrl}
+                                        title={project.frontmatter.title}
+                                        pubDate={project.frontmatter.pubDate}
+                                        lastUpdated={project.frontmatter.lastUpdated}
+                                        description={project.frontmatter.description}
                                         />)}
     </div>
 </BaseLayout>

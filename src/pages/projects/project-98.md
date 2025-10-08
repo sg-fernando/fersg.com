@@ -1,20 +1,12 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
 title: 'Personal Website'
-startDate: 'Oct 2025'
-endDate: 'Oct 2025'
-tagline: 'Tagline.'
-description: 'This is the first post of my new Astro blog.'
-
-pubDate: 2022-07-01
-author: 'Astro Learner'
-image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
+pubDate: 'Oct 8, 2025'
+lastUpdated: ''
+description: 'This website.'
+externalUrl: ''
 ---
-# My First Blog Post
-
-Published on: 2022-07-01
+# Personal Website
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
