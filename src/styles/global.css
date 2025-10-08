@@ -73,9 +73,6 @@ a {
     /* color: #e15226; */
     text-decoration: none;
 }
-.nav-links a.active {
-  color: #e15226e3;
-}
 
 a:hover {
     text-decoration: underline;

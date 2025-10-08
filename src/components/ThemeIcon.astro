@@ -3,7 +3,7 @@
 ---
 
 <button id="themeToggle" aria-label="Toggle theme">
-  <svg aria-hidden="true" width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <svg aria-hidden="true" width="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
       class="sun"
       fill-rule="evenodd"
@@ -21,6 +21,14 @@
     #themeToggle {
         border: 0;
         background: none;
+        transition: background-color 0.3s ease;
+        padding: 5px 5px;
+        border-radius: 10px;
+    }
+
+    #themeToggle:hover {
+        cursor: pointer;
+        background-color: #7f857d82;
     }
 
     .sun {
@@ -37,6 +45,7 @@
     :global(.dark) .moon {
         fill: white;
     }
+
 </style>
 
 <script is:inline>
