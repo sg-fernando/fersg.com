@@ -1,13 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogPost from "../components/BlogPost.astro";
+import WorkItem from "../components/WorkItem.astro";
 const pageTitle = "My Astro Learning Blog";
-const allPosts = Object.values(await import.meta.glob('./posts/*.md', { eager: true }));
+const allWork = Object.values(await import.meta.glob('./work/*.md', { eager: true }));
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>This is where I will post about my journey learning Astro.</p>
-  <ul>
-    {allPosts.map((post:any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
-  </ul>
+    <div class="title">
+            Work
+    </div>
+    <div id="work" class="content">
+        {allWork.map((job:any) => <WorkItem
+                                        title={job.frontmatter.title} 
+                                        company={job.frontmatter.company} 
+                                        startDate={job.frontmatter.startDate} 
+                                        endDate={job.frontmatter.endDate}
+                                        tagline={job.frontmatter.tagline}
+                                        bulletOne={job.frontmatter.bulletOne} 
+                                        bulletTwo={job.frontmatter.bulletTwo} 
+                                        bulletThree={job.frontmatter.bulletThree} 
+                                        bulletFour={job.frontmatter.bulletFour}
+                                        />)}
+    </div>
 </BaseLayout>

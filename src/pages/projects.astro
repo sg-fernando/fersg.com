@@ -1,13 +1,26 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogPost from "../components/BlogPost.astro";
+import ProjectItem from "../components/ProjectItem.astro";
 const pageTitle = "My Astro Learning Blog";
-const allPosts = Object.values(await import.meta.glob('./posts/*.md', { eager: true }));
+const allProjects = Object.values(await import.meta.glob('./projects/*.md', { eager: true }));
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>This is where I will post about my journey learning Astro.</p>
-  <ul>
-    {allPosts.map((post:any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
-  </ul>
+    <div class="title">
+            Projects
+    </div>
+    <div id="work" class="content">
+        {allProjects.map((project:any) => <ProjectItem
+                                        url={project.url}
+                                        title={project.frontmatter.title} 
+                                        company={project.frontmatter.company} 
+                                        startDate={project.frontmatter.startDate} 
+                                        endDate={project.frontmatter.endDate}
+                                        tagline={project.frontmatter.tagline}
+                                        bulletOne={project.frontmatter.bulletOne} 
+                                        bulletTwo={project.frontmatter.bulletTwo} 
+                                        bulletThree={project.frontmatter.bulletThree} 
+                                        bulletFour={project.frontmatter.bulletFour}
+                                        />)}
+    </div>
 </BaseLayout>

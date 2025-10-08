@@ -1,0 +1,49 @@
+---
+const { title, company, startDate, endDate, tagline, bulletOne, bulletTwo, bulletThree, bulletFour } = Astro.props;
+---
+<div class="job">
+    <div class="job-title">{title}</div>
+    <div class="job-company">at {company}</div>
+    <div class="job-dates">{startDate} - {endDate}</div>
+    <div class="job-tagline"><em>{tagline}</em></div>
+    <ul class="job-description">
+        {bulletOne && <li>{bulletOne}</li>}
+        {bulletTwo && <li>{bulletTwo}</li>}
+        {bulletThree && <li>{bulletThree}</li>}
+        {bulletFour && <li>{bulletFour}</li>}
+    </ul>
+
+<style>
+    .job {
+        display: flex;
+        flex-direction: column;
+        gap: .3rem;
+    }
+    
+    .job-title {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    .job-company {
+        font-size: 0.9rem;
+        font-weight: 100;
+    }
+    
+    .job-dates {
+        font-size: 0.9rem;
+        font-weight: 100;
+    }
+    
+    .job-tagline {
+        margin-top: .5rem;
+        font-size: 1rem;
+    }
+    
+    .job-description {
+        /* margin: 0; */
+        margin-top: 0;
+        font-size: 1rem;
+        font-weight: 200;
+    }
+</style>
