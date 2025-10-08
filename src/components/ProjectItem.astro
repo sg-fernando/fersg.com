@@ -1,12 +1,11 @@
 ---
 const { url, externalUrl, title, pubDate, lastUpdated, description } = Astro.props;
-// if externalUrl is provided, use that instead of url
 var usingUrl = url;
 if (externalUrl && externalUrl.length > 0) {
     usingUrl = externalUrl;
 }
 ---
-<a class="project" href={usingUrl}>
+<a class="project" href={usingUrl} target={externalUrl ? "_blank" : "_self"}>
     <div class="project-header">
         <div class="project-title">{title}</div>
         <div class="project-dates">{pubDate}</div>
