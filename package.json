@@ -1,5 +1,5 @@
 {
-  "name": "former-flare",
+  "name": "fersg-com",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,14 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/preact": "^4.1.1",
-    "@astrojs/react": "^4.4.0",
-    "@astrojs/vercel": "^8.0.4",
-    "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0",
+    "@astrojs/mdx": "^4.3.6",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/vercel": "^8.2.8",
     "astro": "^5.14.1",
-    "preact": "^10.27.2",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "sharp": "^0.34.3"
   }
 }
