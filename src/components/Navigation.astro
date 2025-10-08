@@ -1,8 +1,15 @@
 ---
+const currentPath = Astro.url.pathname;
 ---
+
 <div id="main-menu" class="nav-links">
-  <a href="/">home</a>
-  <a href="/work">work</a>
-  <a href="/projects/">projects</a>
-  <!-- <a href="/more/">more</a> -->
+  <a href="/" class={currentPath === '/' ? 'active' : ''}>home</a>
+  <a href="/experience" class={currentPath.startsWith('/experience') ? 'active' : ''}>experience</a>
+  <a href="/projects/" class={currentPath.startsWith('/projects') ? 'active' : ''}>projects</a>
+  <!-- <a href="/more/" class={currentPath.startsWith('/more') ? 'active' : ''}>more</a> -->
 </div>
+
+<style>
+
+
+</style>

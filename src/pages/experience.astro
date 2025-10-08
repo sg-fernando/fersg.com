@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ExperienceItem from "../components/ExperienceItem.astro";
+const pageTitle = "Fernando Sandoval Garza - Experience";
+const allWork = Object.values(await import.meta.glob('./work/*.md', { eager: true }));
+const allEducation = Object.values(await import.meta.glob('./education/*.md', { eager: true }));
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="title">
+            Work
+    </div>
+    <div id="work" class="content">
+        {allWork.map((job:any) => <ExperienceItem
+                                        title={job.frontmatter.title} 
+                                        company={job.frontmatter.company} 
+                                        startDate={job.frontmatter.startDate} 
+                                        endDate={job.frontmatter.endDate}
+                                        description={job.frontmatter.description}
+                                        bulletOne={job.frontmatter.bulletOne} 
+                                        bulletTwo={job.frontmatter.bulletTwo} 
+                                        bulletThree={job.frontmatter.bulletThree} 
+                                        bulletFour={job.frontmatter.bulletFour}
+                                        />)}
+
+    <div class="title">
+            Education
+    </div>
+    <div id="education" class="content">
+        {allEducation.map((edu:any) => <ExperienceItem
+                                        title={edu.frontmatter.title} 
+                                        company={edu.frontmatter.company} 
+                                        startDate={edu.frontmatter.startDate} 
+                                        endDate={edu.frontmatter.endDate}
+                                        description={edu.frontmatter.description}
+                                        bulletOne={edu.frontmatter.bulletOne} 
+                                        bulletTwo={edu.frontmatter.bulletTwo} 
+                                        bulletThree={edu.frontmatter.bulletThree} 
+                                        bulletFour={edu.frontmatter.bulletFour}
+                                        />)}
+    </div>
+</BaseLayout>

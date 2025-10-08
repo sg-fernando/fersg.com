@@ -1,12 +1,12 @@
 ---
 const { title, company, startDate, endDate, description, bulletOne, bulletTwo, bulletThree, bulletFour } = Astro.props;
 ---
-<div class="job">
-    <div class="job-title">{title}</div>
-    <div class="job-company">at {company}</div>
-    <div class="job-dates">{startDate} - {endDate}</div>
-    <div class="job-description"><em>{description}</em></div>
-    <ul class="job-bullets">
+<div class="experience">
+    <div class="experience-title">{title}</div>
+    <div class="experience-company">{company}</div>
+    <div class="experience-dates">{startDate} - {endDate}</div>
+    <div class="experience-description"><em>{description}</em></div>
+    <ul class="experience-bullets">
         {bulletOne && <li>{bulletOne}</li>}
         {bulletTwo && <li>{bulletTwo}</li>}
         {bulletThree && <li>{bulletThree}</li>}
@@ -15,33 +15,32 @@ const { title, company, startDate, endDate, description, bulletOne, bulletTwo, b
 </div>
 
 <style>
-    .job {
+    .experience {
         display: flex;
         flex-direction: column;
         gap: .3rem;
     }
     
-    .job-title {
+    .experience-title {
         font-size: 1rem;
-        font-weight: 600;
+        font-weight: 500;
     }
     
-    .job-company {
+    .experience-company {
         font-size: 0.9rem;
         font-weight: 100;
     }
     
-    .job-dates {
+    .experience-dates {
         font-size: 0.9rem;
         font-weight: 100;
     }
     
-    .job-description {
-        margin-top: .5rem;
+    .experience-description {
         font-size: 1rem;
     }
-    
-    .job-bullets {
+
+    .experience-bullets {
         /* margin: 0; */
         margin-top: 0;
         font-size: 1rem;

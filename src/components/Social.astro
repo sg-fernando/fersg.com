@@ -1,13 +1,16 @@
 ---
 const { platform, username } = Astro.props
+// if email, link to mailto:username
+const href = platform === "email" ? `mailto:${username}` : `https://www.${platform}.com/${username}`
 ---
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a href={href} target="_blank">{platform}</a>
 
 <style>
   a {
-    padding: 0.5rem 1rem;
-    color: white;
-    background-color: #4c1d95;
+    /* padding: 0.5rem 1rem; */
+    /* color: white; */
+    /* background-color: #4c1d95; */
     text-decoration: none;
+    font-weight: 100;
   }
 </style>

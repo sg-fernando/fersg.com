@@ -4,12 +4,36 @@ import Greeting from '../components/Greeting';
 const pageTitle = "Fernando Sandoval Garza - Home";
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <div class="title">
-        Fernando Sandoval Garza<br>
-        Hi
+    <div id="title-area">
+        <div id="hello" class="main-title">Hello,</div>
+        <div id="myname" class="main-title">I'm Fernando.</div>
+        <div id="begin">Check out my <a href="/experience">experience</a> and <a href="/projects">projects</a>, or reach out to me on:</div>
     </div>
-    <div class="content">
-            Hello
-    </div>
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+  <!-- <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} /> -->
 </BaseLayout>
+<style>
+    #title-area {
+        height: 100%;
+    }
+    
+    .main-title {
+        font-size: 5rem;
+        margin: 0 0;
+        padding: 0 0;
+    }
+
+    #hello {
+        font-weight: 100;
+    }
+
+    #myname {
+        font-weight: 500;
+    }
+
+    #begin {
+        font-size: 1.5rem;
+        font-weight: 100;
+        margin: 1rem 0 0 0;
+        padding: 0 0;
+    }
+</style>
