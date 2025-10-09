@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: 'Personal Website'
-pubDate: 'Oct 7, 2025'
-lastUpdated: 'Oct 9, 2025'
-description: 'This website. Built with Astro.js.'
-externalUrl: 'https://github.com/sg-fernando/fersg.com'
+title: 'Simulated CPU'
+pubDate: 'Feb 2, 2021'
+lastUpdated: ''
+description: 'Basic CPU simulation built in Python.'
+externalUrl: 'https://github.com/sg-fernando/simulated-cpu'
 ---
