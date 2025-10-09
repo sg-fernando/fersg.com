@@ -14,7 +14,6 @@ const { pageTitle } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
-        <Analytics/>
     </head>
     <body>
         <Header />
@@ -23,6 +22,7 @@ const { pageTitle } = Astro.props;
             <slot />
         </main>
         <Footer />
+        <Analytics/>
         <script>
         </script>
     </body>
