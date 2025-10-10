@@ -1,6 +1,6 @@
 ---
 title: 'Airborne Platform Automation Test Engineer'
-company: 'Gogo Business Aviation'
+subtitle: 'Gogo Business Aviation'
 startDate: 'Jun 2024'
 endDate: 'Feb 2025'
 description: ''

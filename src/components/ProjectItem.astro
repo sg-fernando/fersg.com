@@ -5,7 +5,7 @@ if (externalUrl && externalUrl.length > 0) {
     usingUrl = externalUrl;
 }
 ---
-<a class="project" href={usingUrl} target={externalUrl ? "_blank" : "_self"}>
+<a class="project" href={usingUrl} target={externalUrl ? "_blank" : "_self"} rel="noopener noreferrer">
     <div id="header" class="project-row">
         <div class="project-title">{title}</div>
         <div class="project-dates">{pubDate}</div>

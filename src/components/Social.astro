@@ -3,7 +3,7 @@ const { platform, username } = Astro.props
 // if email, link to mailto:username
 const href = platform === "email" ? `mailto:${username}` : `https://www.${platform}.com/${username}`
 ---
-<a href={href} target="_blank">{platform}</a>
+<a href={href} target="_blank" rel="noopener noreferrer">{platform}</a>
 
 <style>
   a {

@@ -1,11 +1,16 @@
 ---
-const { title, company, startDate, endDate, description, bulletOne, bulletTwo, bulletThree, bulletFour } = Astro.props;
+const { title, subtitle, startDate, endDate, description, link, bulletOne, bulletTwo, bulletThree, bulletFour } = Astro.props;
 ---
 <div class="experience">
-    <div class="experience-title">{title}</div>
-    <div class="experience-company">{company}</div>
-    <div class="experience-dates">{startDate} - {endDate}</div>
+
+    {link ? <a class="experience-title" href={link} target="_blank" rel="noopener noreferrer">{title}</a> : <div class="experience-title">{title}</div>}
+    <div class="experience-subtitle">{subtitle}</div>
+
+    {endDate && !startDate && <div class="experience-dates">{endDate}</div>}
+    {startDate && endDate && <div class="experience-dates">{startDate} - {endDate}</div>}
+
     <div class="experience-description"><em>{description}</em></div>
+
     <ul class="experience-bullets">
         {bulletOne && <li>{bulletOne}</li>}
         {bulletTwo && <li>{bulletTwo}</li>}
@@ -26,7 +31,7 @@ const { title, company, startDate, endDate, description, bulletOne, bulletTwo, b
         font-weight: 500;
     }
     
-    .experience-company {
+    .experience-subtitle {
         font-size: 0.9rem;
         font-weight: 100;
     }

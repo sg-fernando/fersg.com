@@ -1,6 +1,6 @@
 ---
 title: 'Computer Science and Robotics Researcher'
-company: 'Colorado School of Mines'
+subtitle: 'Colorado School of Mines'
 startDate: 'Nov 2021'
 endDate: 'Aug 2022'
 description: ''

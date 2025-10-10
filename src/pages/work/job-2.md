@@ -1,6 +1,6 @@
 ---
 title: 'Automation Test Engineer'
-company: 'Gogo Business Aviation'
+subtitle: 'Gogo Business Aviation'
 startDate: 'May 2023'
 endDate: 'Aug 2023'
 description: ''
