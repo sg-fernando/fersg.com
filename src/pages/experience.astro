@@ -9,6 +9,24 @@ const allPublications = Object.values(await import.meta.glob('./publications/*.m
 
 <BaseLayout pageTitle={pageTitle}>
     <div class="title">
+        Education
+    </div>
+    <div id="education" class="content">
+        {allEducation.map((edu:any) => <ExperienceItem
+                                        title={edu.frontmatter.title} 
+                                        subtitle={edu.frontmatter.subtitle} 
+                                        startDate={edu.frontmatter.startDate} 
+                                        endDate={edu.frontmatter.endDate}
+                                        description={edu.frontmatter.description}
+                                        link={edu.frontmatter.link}
+                                        bulletOne={edu.frontmatter.bulletOne} 
+                                        bulletTwo={edu.frontmatter.bulletTwo} 
+                                        bulletThree={edu.frontmatter.bulletThree} 
+                                        bulletFour={edu.frontmatter.bulletFour}
+                                        />)}
+    </div>
+    
+    <div class="title">
             Work
     </div>
     <div id="work" class="content">
@@ -28,38 +46,20 @@ const allPublications = Object.values(await import.meta.glob('./publications/*.m
     </div>
     
     <div class="title">
-        Education
+        Publications
     </div>
-    <div id="education" class="content">
-        {allEducation.map((edu:any) => <ExperienceItem
-                                        title={edu.frontmatter.title} 
-                                        subtitle={edu.frontmatter.subtitle} 
-                                        startDate={edu.frontmatter.startDate} 
-                                        endDate={edu.frontmatter.endDate}
-                                        description={edu.frontmatter.description}
-                                        link={edu.frontmatter.link}
-                                        bulletOne={edu.frontmatter.bulletOne} 
-                                        bulletTwo={edu.frontmatter.bulletTwo} 
-                                        bulletThree={edu.frontmatter.bulletThree} 
-                                        bulletFour={edu.frontmatter.bulletFour}
+    <div id="publications" class="content">
+        {allPublications.map((pub:any) => <ExperienceItem
+                                        title={pub.frontmatter.title} 
+                                        subtitle={pub.frontmatter.subtitle} 
+                                        startDate={pub.frontmatter.startDate} 
+                                        endDate={pub.frontmatter.endDate}
+                                        description={pub.frontmatter.description}
+                                        link={pub.frontmatter.link}
+                                        bulletOne={pub.frontmatter.bulletOne} 
+                                        bulletTwo={pub.frontmatter.bulletTwo} 
+                                        bulletThree={pub.frontmatter.bulletThree} 
+                                        bulletFour={pub.frontmatter.bulletFour}
                                         />)}
     </div>
-    
-        <div class="title">
-                Publications
-        </div>
-        <div id="publications" class="content">
-            {allPublications.map((pub:any) => <ExperienceItem
-                                            title={pub.frontmatter.title} 
-                                            subtitle={pub.frontmatter.subtitle} 
-                                            startDate={pub.frontmatter.startDate} 
-                                            endDate={pub.frontmatter.endDate}
-                                            description={pub.frontmatter.description}
-                                            link={pub.frontmatter.link}
-                                            bulletOne={pub.frontmatter.bulletOne} 
-                                            bulletTwo={pub.frontmatter.bulletTwo} 
-                                            bulletThree={pub.frontmatter.bulletThree} 
-                                            bulletFour={pub.frontmatter.bulletFour}
-                                            />)}
-        </div>
 </BaseLayout>
