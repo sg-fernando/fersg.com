@@ -9,14 +9,15 @@ const { title, subtitle, startDate, endDate, description, link, bulletOne, bulle
     {endDate && !startDate && <div class="experience-dates">{endDate}</div>}
     {startDate && endDate && <div class="experience-dates">{startDate} - {endDate}</div>}
 
-    <div class="experience-description"><em>{description}</em></div>
+    {description && <div class="experience-description"><em>{description}</em></div>}
 
+    {bulletOne &&
     <ul class="experience-bullets">
         {bulletOne && <li>{bulletOne}</li>}
         {bulletTwo && <li>{bulletTwo}</li>}
         {bulletThree && <li>{bulletThree}</li>}
         {bulletFour && <li>{bulletFour}</li>}
-    </ul>
+    </ul>}
 </div>
 
 <style>
