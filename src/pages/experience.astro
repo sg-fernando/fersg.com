@@ -7,25 +7,7 @@ const allEducation = Object.values(await import.meta.glob('./education/*.md', { 
 const allPublications = Object.values(await import.meta.glob('./publications/*.md', { eager: true }));
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-    <div class="title">
-        Education
-    </div>
-    <div id="education" class="content">
-        {allEducation.map((edu:any) => <ExperienceItem
-                                        title={edu.frontmatter.title} 
-                                        subtitle={edu.frontmatter.subtitle} 
-                                        startDate={edu.frontmatter.startDate} 
-                                        endDate={edu.frontmatter.endDate}
-                                        description={edu.frontmatter.description}
-                                        link={edu.frontmatter.link}
-                                        bulletOne={edu.frontmatter.bulletOne} 
-                                        bulletTwo={edu.frontmatter.bulletTwo} 
-                                        bulletThree={edu.frontmatter.bulletThree} 
-                                        bulletFour={edu.frontmatter.bulletFour}
-                                        />)}
-    </div>
-    
+<BaseLayout pageTitle={pageTitle}>    
     <div class="title">
             Work
     </div>
@@ -43,6 +25,24 @@ const allPublications = Object.values(await import.meta.glob('./publications/*.m
                                         bulletFour={job.frontmatter.bulletFour}
                                         />)}
 
+    </div>
+
+     <div class="title">
+        Education
+    </div>
+    <div id="education" class="content">
+        {allEducation.map((edu:any) => <ExperienceItem
+                                        title={edu.frontmatter.title} 
+                                        subtitle={edu.frontmatter.subtitle} 
+                                        startDate={edu.frontmatter.startDate} 
+                                        endDate={edu.frontmatter.endDate}
+                                        description={edu.frontmatter.description}
+                                        link={edu.frontmatter.link}
+                                        bulletOne={edu.frontmatter.bulletOne} 
+                                        bulletTwo={edu.frontmatter.bulletTwo} 
+                                        bulletThree={edu.frontmatter.bulletThree} 
+                                        bulletFour={edu.frontmatter.bulletFour}
+                                        />)}
     </div>
     
     <div class="title">
